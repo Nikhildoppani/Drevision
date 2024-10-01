@@ -1,0 +1,12 @@
+body{
+    font-family: "Be Vietnam Pro","Poppins";
+    padding-top: 120px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+.main{
+    flex:1;
+}

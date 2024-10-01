@@ -1,0 +1,22 @@
+.header{
+    height: 100px;
+    display: flex;
+    position: fixed;
+    background-color:#FFF0D1;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom-style:solid ;
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(219, 216, 216);
+    z-index: 1;
+    justify-content:space-between;
+}
+.logo{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 50px;
+    color: #664343;
+    
+}
