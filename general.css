@@ -86,3 +86,16 @@ body{
     color: #664343;
     text-align: center;
 }
+@media only screen and (max-width: 600px) {
+    .chatbot-icon {
+        width: 100px;
+        height: 100px;
+        padding: 24px;
+    }
+
+    .chatbot-icon img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
