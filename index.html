@@ -82,12 +82,35 @@
                         </a>
                         
                     </div>
+                  
                 </div>
             </div>
             <footer>
                 Copyright &#169; 2024 Nikhil Doppani. All Rights Reserved.
               </footer>
             
+              <!-- Floating Chatbot Icon -->
+                <div class="chatbot-container">
+                    <div class="chatbot-icon" onclick="toggleChatOptions()">
+                        <img src="assets/job.png" alt="Chatbot" />
+                    </div>
+                    <div class="chat-options" id="chatOptions">
+                        <div class="chat-heading">Interview Questions</div>
+                        <a href="java_questions.html">Java Questions</a>
+                        <a href="#">SQL Questions</a>
+                        <a href="#">HTML & CSS</a>
+                        <a href="#">Hibernate</a>
+                        <a href="#">Spring Boot</a>
+                        <a href="#">JEE & JSP</a>
+                    </div>
+                </div>
+                <script>
+                    function toggleChatOptions() {
+                        const chatMenu = document.getElementById("chatOptions");
+                        chatMenu.style.display = chatMenu.style.display === "flex" ? "none" : "flex";
+                    }
+                </script>
+                
 
         </div>
     </body>
