@@ -4,6 +4,7 @@ body{
     padding-left: 50px;
     padding-right: 50px;
     margin-bottom: 0;
+    /* height: 100vh; Full viewport height */
     display: flex;
     flex-direction: column;
 }
@@ -40,14 +41,14 @@ body{
     background-color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px;
     margin-top: 10px;
 }
 
 .chat-options a {
     text-decoration: none;
     color: #664343;
-    padding: 8px 12px;
+    padding: 12px 16px;
     border-radius: 5px;
     transition: background 0.3s;
 }
@@ -57,7 +58,7 @@ body{
 }
 .chatbot-icon {
     background-color: #FFF0D1;
-    padding: 12px;
+    padding: 25px;
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -70,8 +71,8 @@ body{
 }
 
 .chatbot-icon img {
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
 }
 
@@ -99,3 +100,77 @@ body{
     }
 }
 
+
+  
+  /* The main content should take up as much space as possible */
+  .main {
+    flex: 1;
+  }
+  
+  /* Full-width footer */
+  .footer {
+    /* background-color: #FFF0D1; Soft peach */
+    padding: 40px 0 20px;
+    color: #000000; /* Black text */
+    border-top: 1px solid #664343; /* Brown line */
+    width: 100%; /* Full width */
+    position: relative;
+    margin-top: 60px;
+    box-sizing: border-box;
+  }
+  
+  /* Footer container */
+  .footer-container {
+    width: 100%;
+    max-width: 1200px; /* Content centered within this width */
+    margin: 0 auto;
+    background-color: #FFF0D1;
+  }
+  
+  /* Columns inside the footer */
+  .footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-section {
+    flex: 1 1 200px;
+    min-width: 200px;
+  }
+  
+  .footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #664343; /* Brown headings */
+  }
+  
+  .footer-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: #664343; /* Brown links */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+    color: #000000; /* Hover color black */
+  }
+  
+  .footer-copy {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #000000; /* Black copyright */
+  }
+  
