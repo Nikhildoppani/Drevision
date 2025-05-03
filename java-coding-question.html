@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Java Program Display</title>
+  <link rel="stylesheet" href="java-coding-question.css" />
+</head>
+<body>
+  <div class="container">
+
+    <button class="back-button" onclick=goBack()>← Back</button>
+    <script>
+        function goBack() {
+          window.location.href = 'index.html';
+        }
+      </script>
+    <h1>TOP 50 JAVA PROGRAMMING INTERVIEW QUESTIONS</h1>
+
+    <div class="question-box">
+      <p>
+        <strong>Question: 1</strong><br>
+        Write a program to check if a number is prime.
+      </p>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=12.5px&lh=145%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2509public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2509%2509Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2509%2509System.out.println%28%2522Enter%2520the%2520number%2520to%2520check%2520Prime%2520or%2520not%253A%2520%2522%29%253B%250A%2509%2509int%2520n%2520%253D%2520sc.nextInt%28%29%253B%250A%2509%2509if%2520%28isPrime%28n%29%29%2520%257B%250A%2509%2509%2509System.out.println%28n%2520%252B%2520%2522%2520is%2520Prime%2520number%2522%29%253B%250A%2509%2509%257D%2520else%2520%257B%250A%2509%2509%2509System.out.println%28n%2520%252B%2520%2522%2520is%2520not%2520a%2520Prime%2520number%2522%29%253B%250A%2509%2509%257D%250A%2509%257D%250A%250A%2509public%2520static%2520boolean%2520isPrime%28int%2520n%29%2520%257B%250A%2509%2509if%2520%28n%2520%253C%25202%29%2520%257B%250A%2509%2509%2509return%2520false%253B%250A%2509%2509%257D%250A%2509%2509for%2520%28int%2520i%2520%253D%25202%253B%2520i%2520*%2520i%2520%253C%253D%2520n%253B%2520i%252B%252B%29%2520%257B%250A%2509%2509%2509if%2520%28n%2520%2525%2520i%2520%253D%253D%25200%29%2520%257B%250A%2509%2509%2509%2509return%2520false%253B%250A%2509%2509%2509%257D%250A%2509%2509%257D%250A%2509%2509return%2520true%253B%250A%2509%257D%250A%257D%250A"
+        class="responsive-iframe"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+
+    <div class="output-area">
+      <h2>Output</h2>
+      <pre>
+    Enter the number to check Prime or not: 
+    3
+    3 is Prime number
+      </pre>
+    </div>
+    
+    <div class="question-box">
+      <p>
+        <strong>Question: 2</strong><br>
+        Write a program to reverse a string.
+      </p>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=12.5px&lh=145%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2509public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2509%2509Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2509%2509System.out.println%28%2522Enter%2520the%2520String%2520to%2520Reverse%253A%2520%2522%29%253B%250A%2509%2509String%2520s%2520%253D%2520sc.nextLine%28%29%253B%250A%2509%2509String%2520s2%2520%253D%2520%2522%2522%253B%250A%2509%2509System.out.println%28%2522Using%2520for%2520loop%253A%2520%2522%29%253B%250A%2509%2509for%2520%28int%2520i%2520%253D%2520s.length%28%29%2520-%25201%253B%2520i%2520%253E%253D%25200%253B%2520i--%29%2520%257B%250A%2509%2509%2509char%2520c%2520%253D%2520s.charAt%28i%29%253B%250A%2509%2509%2509s2%2520%252B%253D%2520c%253B%250A%2509%2509%257D%250A%2509%2509System.out.println%28s2%29%253B%250A%2509%2509System.out.println%28%2522Using%2520reverse%2520method%253A%2520%2522%29%253B%250A%2509%2509StringBuilder%2520s3%2520%253D%2520new%2520StringBuilder%28s%29%253B%250A%2509%2509System.out.println%28s3.reverse%28%29%29%253B%250A%2509%257D%250A%250A%257D%250A"
+        class="responsive-iframe"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+
+    <div class="output-area">
+      <h2>Output</h2>
+      <pre>
+        Enter the String to Reverse: 
+        Nikhil
+        Using for loop: 
+        lihkiN
+        Using reverse method: 
+        lihkiN
+      </pre>
+    </div>
+
+    <div class="question-box">
+      <p>
+        <strong>Question: 3</strong><br>
+        Find the factorial of a number.
+      </p>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=12.5px&lh=145%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2509public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2509%2509Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2509%2509System.out.println%28%2522Enter%2520the%2520Number%2520to%2520find%2520factorial%253A%2520%2522%29%253B%250A%2509%2509int%2520n%2520%253D%2520sc.nextInt%28%29%253B%250A%2509%2509long%2520factorial%2520%253D%25201%253B%250A%2509%2509for%2520%28int%2520i%2520%253D%25201%253B%2520i%2520%253C%253D%2520n%253B%2520i%252B%252B%29%2520%257B%250A%2509%2509%2509factorial%2520*%253D%2520i%253B%250A%2509%2509%257D%250A%2509%2509System.out.println%28factorial%29%253B%250A%2509%257D%250A%257D%250A"
+        class="responsive-iframe"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+
+    <div class="output-area">
+      <h2>Output</h2>
+      <pre>
+        Enter the Number to find factorial: 
+        5
+        120
+      </pre>
+    </div>
+
+    <div class="question-box">
+        <p>
+          <strong>Question: 4</strong><br>
+          Write a program to check if a string is a palindrome.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=12.5px&lh=145%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2509public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2509%2509Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2509%2509System.out.println%28%2522Enter%2520the%2520String%2520to%2520check%2520Palindrome%2520or%2520Not%253A%2520%2522%29%253B%250A%2509%2509String%2520s%2520%253D%2520sc.nextLine%28%29.toLowerCase%28%29%253B%250A%250A%2509%2509if%2520%28checkPalindrome%28s%29%29%2520%257B%250A%2509%2509%2509System.out.println%28s%2520%252B%2520%2522%2520is%2520Palindrome.%2522%29%253B%250A%2509%2509%257D%2520else%2520%257B%250A%2509%2509%2509System.out.println%28s%2520%252B%2520%2522%2520is%2520not%2520Palindrome.%2522%29%253B%250A%2509%2509%257D%250A%2509%257D%250A%250A%2509public%2520static%2520boolean%2520checkPalindrome%28String%2520s%29%2520%257B%250A%2509%2509int%2520i%2520%253D%25200%253B%250A%2509%2509int%2520j%2520%253D%2520s.length%28%29%2520-%25201%253B%250A%2509%2509while%2520%28i%2520%253C%2520j%29%2520%257B%250A%2509%2509%2509if%2520%28s.charAt%28i%29%2520%21%253D%2520s.charAt%28j%29%29%2520%257B%250A%2509%2509%2509%2509return%2520false%253B%250A%2509%2509%2509%257D%250A%2509%2509%2509i%252B%252B%253B%250A%2509%2509%2509j--%253B%250A%2509%2509%257D%250A%2509%2509return%2520true%253B%250A%2509%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter the String to check Palindrome or Not: 
+          Tenet
+          tenet is Palindrome.
+        </pre>
+      </div>
+    
+    <div class="side-label">
+      &copy; Nikhil Doppani
+    </div>
+  
+  </div>
+</body>
+</html>
