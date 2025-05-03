@@ -83,7 +83,7 @@
   }
   .side-label {
     position: fixed;
-    top: 50%;
+    top: 40%;
     right: 1.5%;
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: right center;
