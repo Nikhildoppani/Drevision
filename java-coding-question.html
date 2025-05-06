@@ -270,6 +270,30 @@
             0 1 1 2 3 5 8 13 21 34 
         </pre>
       </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 11</strong><br>
+          FIND THE LONGEST SUBSTRING WITHOUT REPEATING CHARACTERS.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.Scanner%253B%250A%250A%250Apublic%2520class%2520LargestSubStringWithOutRepeatingCharacter%2520%257B%250A%250A%250A%2509public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2509%2509Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2509%2509System.out.println%28%2522Enter%2520the%2520string%253A%2520%2522%29%253B%250A%2509%2509String%2520s%253Dsc.nextLine%28%29%253B%250A%2509%2509sc.close%28%29%253B%250A%2509%2509String%2520str%253Dinput%28s%29%253B%250A%2509%2509System.out.println%28str.length%28%29%29%253B%250A%250A%250A%2509%257D%250A%2509public%2520static%2520String%2520input%28String%2520s%29%2520%257B%250A%2509%2509String%2520output%253D%2522%2522%253B%250A%2509%2509for%28int%2520size%253D1%253Bsize%253C%253Ds.length%28%29%253Bsize%252B%252B%29%2520%257B%250A%2509%2509%2509for%28int%2520i%253D0%253Bi%253C%253Ds.length%28%29-size%253Bi%252B%252B%29%2520%257B%250A%2509%2509%2509%2509String%2520str%253D%2522%2522%253B%250A%2509%2509%2509%2509for%28int%2520j%253Di%253Bj%253Ci%252Bsize%253Bj%252B%252B%29%2520%257B%250A%2509%2509%2509%2509%2509char%2520c%253Ds.charAt%28j%29%253B%250A%2509%2509%2509%2509%2509str%252B%253Dc%253B%250A%2509%2509%2509%2509%257D%250A%2509%2509%2509%2509if%28checkRepetingCharacters%28str%29%29%2520%257B%250A%2509%2509%2509%2509%2509if%28str.length%28%29%253Eoutput.length%28%29%29%2520%257B%250A%2509%2509%2509%2509%2509%2509output%253Dstr%253B%250A%2509%2509%2509%2509%2509%257D%250A%2509%2509%2509%2509%257D%250A%2509%2509%2509%257D%250A%2509%2509%257D%250A%2509%2509return%2520%28output%2520%21%253D%2520null%2520%2526%2526%2520%21output.isEmpty%28%29%29%2520%253F%2520output%2520%253A%2520%2522no%2520such%2520string%2520available%2522%253B%250A%250A%250A%2509%257D%250A%2509private%2520static%2520boolean%2520checkRepetingCharacters%28String%2520s%29%2520%257B%250A%2509%2509String%2520str%253D%2522%2522%253B%250A%2509%2509for%28int%2520i%253D0%253Bi%253Cs.length%28%29%253Bi%252B%252B%29%2520%257B%250A%2509%2509%2509char%2520c%253Ds.charAt%28i%29%253B%250A%2509%2509%2509if%28check%28c%252Cstr%29%29%2520%257B%250A%2509%2509%2509%2509str%252B%253Dc%253B%250A%2509%2509%2509%257D%250A%2509%2509%2509else%2520%257B%250A%2509%2509%2509%2509return%2520false%253B%250A%2509%2509%2509%257D%250A%2509%2509%257D%250A%2509%2509return%2520true%253B%250A%2509%2509%250A%2509%257D%250A%2509private%2520static%2520boolean%2520check%28char%2520c%252CString%2520s%29%2520%257B%250A%2509%2509for%28int%2520i%253D0%253Bi%253Cs.length%28%29%253Bi%252B%252B%29%2520%257B%250A%2509%2509%2509char%2520character%253Ds.charAt%28i%29%253B%250A%2509%2509%2509if%28character%253D%253Dc%29%2520%257B%250A%2509%2509%2509%2509return%2520false%253B%250A%2509%2509%2509%257D%250A%2509%2509%257D%250A%2509%2509return%2520true%253B%250A%2509%257D%250A%250A%250A%257D%250A"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter the string: 
+          abcabcbb
+          abc 
+        </pre>
+      </div>
     <div class="side-label">
       &copy; Nikhil Doppani
     </div>
