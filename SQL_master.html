@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SQL Master</title>
+  <link rel="stylesheet" href="java-coding-question.css" />
+</head>
+<body>
+  <div class="container">
+
+    <button class="back-button" onclick=goBack()>← Back</button>
+    <script>
+        function goBack() {
+          window.location.href = 'index.html';
+        }
+      </script>
+    <h1>SQL Practice | Drevision</h1>
+    <h2>Database setup</h2>
+    <div class="question-box">
+      <p>
+        <strong>Step: 1</strong><br>
+        Create the Database
+      </p>
+    </div>
+
+    <div class="iframe-wrapper">
+      <iframe
+      src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=CREATE%2520DATABASE%2520CompanyDB%253B%250AUSE%2520CompanyDB%253B%250A"
+      class="responsive-iframe"
+        sandbox="allow-scripts allow-same-origin"
+      ></iframe>
+    </div>
+    
+    <div class="question-box">
+        <p>
+          <strong>Step: 2</strong><br>
+          Create Tables
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=CREATE%2520TABLE%2520employee%2520%28%250A%2520%2520%2520%2520EmpID%2520INT%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520EmpName%2520VARCHAR%28100%29%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520Age%2520INT%252C%250A%2520%2520%2520%2520Salary%2520DECIMAL%2810%252C2%29%252C%250A%2520%2520%2520%2520DeptID%2520INT%252C%250A%2520%2520%2520%2520HireDate%2520DATE%252C%250A%2520%2520%2520%2520PRIMARY%2520KEY%2520%28EmpID%29%252C%250A%2520%2520%2520%2520FOREIGN%2520KEY%2520%28DeptID%29%2520REFERENCES%2520department%28DeptID%29%250A%29%253B%250A%250ACREATE%2520TABLE%2520department%2520%28%250A%2520%2520%2520%2520DeptID%2520INT%2520NOT%2520NULL%2520%252C%250A%2520%2520%2520%2520DeptName%2520VARCHAR%2850%29%2520NOT%2520NULL%2520UNIQUE%252C%250A%2520%2520%2520%2520PRIMARY%2520KEY%2520%28DeptID%29%250A%29%253B%250A%250ACREATE%2520TABLE%2520project%2520%28%250A%2520%2520%2520%2520ProjectID%2520INT%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520ProjectName%2520VARCHAR%28100%29%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520DeptID%2520INT%252C%250A%2520%2520%2520%2520PRIMARY%2520KEY%2520%28ProjectID%29%252C%250A%2520%2520%2520%2520FOREIGN%2520KEY%2520%28DeptID%29%2520REFERENCES%2520department%28DeptID%29%250A%29%253B%250A%250ACREATE%2520TABLE%2520employeeproject%2520%28%250A%2520%2520%2520%2520EmpID%2520INT%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520ProjectID%2520INT%2520NOT%2520NULL%252C%250A%2520%2520%2520%2520Role%2520VARCHAR%2850%29%252C%250A%2520%2520%2520%2520PRIMARY%2520KEY%2520%28EmpID%252C%2520ProjectID%29%252C%250A%2520%2520%2520%2520FOREIGN%2520KEY%2520%28EmpID%29%2520REFERENCES%2520employee%28EmpID%29%252C%250A%2520%2520%2520%2520FOREIGN%2520KEY%2520%28ProjectID%29%2520REFERENCES%2520project%28ProjectID%29%250A%29%253B%250A"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Step: 3</strong><br>
+          Insert Sample Data
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=INSERT%2520INTO%2520employee%2520%28EmpID%252C%2520EmpName%252C%2520Age%252C%2520Salary%252C%2520DeptID%252C%2520HireDate%29%2520VALUES%250A%281%252C%2520%27Alice%27%252C%252028%252C%252060000.00%252C%25201%252C%2520%272019-10-26%27%29%252C%250A%282%252C%2520%27Bob%27%252C%252035%252C%252075000.00%252C%25202%252C%2520%272018-06-05%27%29%252C%250A%283%252C%2520%27Charlie%27%252C%252040%252C%252090000.00%252C%25203%252C%2520%272010-09-19%27%29%252C%250A%284%252C%2520%27David%27%252C%252030%252C%252050000.00%252C%25201%252C%2520%272018-06-11%27%29%252C%250A%285%252C%2520%27Eve%27%252C%252026%252C%252055000.00%252C%25204%252C%2520%272021-03-25%27%29%252C%250A%286%252C%2520%27Frank%27%252C%252032%252C%252072000.00%252C%25205%252C%2520%272025-07-07%27%29%252C%250A%287%252C%2520%27Grace%27%252C%252029%252C%252062000.00%252C%25201%252C%2520%272025-03-07%27%29%252C%250A%288%252C%2520%27Hank%27%252C%252045%252C%252098000.00%252C%25203%252C%2520%272010-12-06%27%29%252C%250A%289%252C%2520%27Ivy%27%252C%252027%252C%252053000.00%252C%25202%252C%2520%272024-01-18%27%29%252C%250A%2810%252C%2520%27Jack%27%252C%252031%252C%252068000.00%252C%25204%252C%2520%272024-11-22%27%29%252C%250A%2811%252C%2520%27Nikhil%27%252C%252023%252C%252045000.00%252C%25204%252C%2520%272015-03-30%27%29%252C%250A%2812%252C%2520%27Kevin%27%252C%252034%252C%252088000.00%252C%25206%252C%2520%272025-06-17%27%29%252C%250A%2813%252C%2520%27Laura%27%252C%252029%252C%252065000.00%252C%25207%252C%2520%272019-11-03%27%29%252C%250A%2814%252C%2520%27Mason%27%252C%252041%252C%252097000.00%252C%25203%252C%2520%272016-04-15%27%29%252C%250A%2815%252C%2520%27Nina%27%252C%252027%252C%252052000.00%252C%25202%252C%2520%272018-10-01%27%29%252C%250A%2816%252C%2520%27Oscar%27%252C%252033%252C%252071000.00%252C%25205%252C%2520%272023-11-08%27%29%252C%250A%2817%252C%2520%27Paula%27%252C%252026%252C%252048000.00%252C%25207%252C%2520%272015-01-02%27%29%252C%250A%2818%252C%2520%27Quincy%27%252C%252028%252C%252056000.00%252C%2520NULL%252C%2520%272024-01-24%27%29%252C%250A%2819%252C%2520%27Rita%27%252C%252030%252C%252060000.00%252C%2520NULL%252C%2520%272021-05-04%27%29%252C%250A%2820%252C%2520%27sai%27%252C%252026%252C%252035000.00%252C%25202%252C%2520%272021-01-26%27%29%252C%250A%2822%252C%2520%27Uday%27%252C%252022%252C%252030000.00%252C%25202%252C%2520%272025-01-01%27%29%253B%250A%250AINSERT%2520INTO%2520department%2520%28DeptID%252C%2520DeptName%29%2520VALUES%250A%287%252C%2520%27Customer%2520Support%27%29%252C%250A%283%252C%2520%27Finance%27%29%252C%250A%282%252C%2520%27HR%27%29%252C%250A%281%252C%2520%27IT%27%29%252C%250A%284%252C%2520%27Marketing%27%29%252C%250A%285%252C%2520%27Operations%27%29%252C%250A%286%252C%2520%27Research%2520%2526%2520Development%27%29%253B%250A%250AINSERT%2520INTO%2520employeeproject%2520%28EmpID%252C%2520ProjectID%252C%2520Role%29%2520VALUES%250A%281%252C%25201%252C%2520%27Developer%27%29%252C%250A%281%252C%25202%252C%2520%27Developer%27%29%252C%250A%281%252C%25203%252C%2520%27Lead%2520Engineer%27%29%252C%250A%282%252C%25203%252C%2520%27Manager%27%29%252C%250A%283%252C%25202%252C%2520%27Analyst%27%29%252C%250A%283%252C%25204%252C%2520%27System%2520Analyst%27%29%252C%250A%283%252C%25205%252C%2520%27Consultant%27%29%252C%250A%284%252C%25201%252C%2520%27Tester%27%29%252C%250A%285%252C%25201%252C%2520%27Data%2520Analyst%27%29%252C%250A%285%252C%25202%252C%2520%27Business%2520Analyst%27%29%252C%250A%285%252C%25205%252C%2520%27Marketing%2520Specialist%27%29%252C%250A%286%252C%25206%252C%2520%27Operations%2520Manager%27%29%252C%250A%287%252C%25203%252C%2520%27Cloud%2520Engineer%27%29%252C%250A%287%252C%25206%252C%2520%27Researcher%27%29%252C%250A%287%252C%25207%252C%2520%27Cybersecurity%2520Expert%27%29%252C%250A%288%252C%25202%252C%2520%27Finance%2520Lead%27%29%252C%250A%289%252C%25204%252C%2520%27HR%2520Specialist%27%29%252C%250A%2810%252C%25201%252C%2520%27Marketing%2520Analyst%27%29%252C%250A%2811%252C%25209%252C%2520%27Research%2520Engineer%27%29%252C%250A%2812%252C%252010%252C%2520%27Customer%2520Representative%27%29%252C%250A%2813%252C%25208%252C%2520%27Security%2520Analyst%27%29%252C%250A%2814%252C%25203%252C%2520%27Finance%2520Consultant%27%29%252C%250A%2815%252C%25206%252C%2520%27Supply%2520Chain%2520Analyst%27%29%252C%250A%2816%252C%252010%252C%2520%27Support%2520Specialist%27%29%253B%250A%250AINSERT%2520INTO%2520project%2520%28ProjectID%252C%2520ProjectName%252C%2520DeptID%29%2520VALUES%250A%281%252C%2520%27Website%2520Development%27%252C%25201%29%252C%250A%282%252C%2520%27Payroll%2520System%27%252C%25203%29%252C%250A%283%252C%2520%27Employee%2520Onboarding%27%252C%25202%29%252C%250A%284%252C%2520%27Ad%2520Campaign%27%252C%25204%29%252C%250A%285%252C%2520%27Supply%2520Chain%2520Optimization%27%252C%25205%29%252C%250A%286%252C%2520%27Cloud%2520Migration%27%252C%25201%29%252C%250A%287%252C%2520%27HR%2520Training%27%252C%25202%29%252C%250A%288%252C%2520%27AI%2520Research%27%252C%25206%29%252C%250A%289%252C%2520%27Product%2520Support%27%252C%25207%29%252C%250A%2810%252C%2520%27Cybersecurity%2520Initiative%27%252C%25203%29%252C%250A%2811%252C%2520%27Data%2520Analytics%27%252C%25206%29%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <h2>Queries to Practice</h2>
+    <div class="question-box">
+        <p>
+          <strong>query: 1</strong><br>
+          Retrieve all employees and their details.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520*%2520FROM%2520Employee%253B%250A"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+    
+      <div class="question-box">
+        <p>
+          <strong>Query: 2</strong><br>
+          Get the list of all departments.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520*%2520FROM%2520Department%253B%250A"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+      
+      <div class="question-box">
+        <p>
+          <strong>Query: 3</strong><br>
+          Find all employees working in the 'IT' department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%2520FROM%2520Employee%2520e%2520%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AWHERE%2520d.DeptName%2520%253D%2520%27IT%27%253B%250A"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 4</strong><br>
+          Retrieve employees earning more than ₹50,000.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%252C%2520Salary%2520FROM%2520Employee%2520WHERE%2520Salary%2520%253E%252050000%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 5</strong><br>
+          Find employees assigned to projects.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520e.EmpName%252C%2520p.ProjectName%2520%250AFROM%2520Employee%2520e%250AJOIN%2520EmployeeProject%2520ep%2520ON%2520e.EmpID%2520%253D%2520ep.EmpID%250AJOIN%2520Project%2520p%2520ON%2520ep.ProjectID%2520%253D%2520p.ProjectID%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 6</strong><br>
+          Count the number of employees in each department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520d.DeptName%252C%2520COUNT%28e.EmpID%29%2520AS%2520EmployeeCount%250AFROM%2520Department%2520d%250ALEFT%2520JOIN%2520Employee%2520e%2520ON%2520d.DeptID%2520%253D%2520e.DeptID%250AGROUP%2520BY%2520d.DeptName%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 7</strong><br>
+          Find the highest-paid employee in each department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520d.DeptName%252C%2520e.EmpName%252C%2520e.Salary%250AFROM%2520Employee%2520e%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AWHERE%2520e.Salary%2520%253D%2520%28SELECT%2520MAX%28Salary%29%2520FROM%2520Employee%2520WHERE%2520DeptID%2520%253D%2520e.DeptID%29%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 8</strong><br>
+          Retrieve all employees and their projects, even if they are not assigned to any project.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520e.EmpName%252C%2520p.ProjectName%250AFROM%2520Employee%2520e%250ALEFT%2520JOIN%2520EmployeeProject%2520ep%2520ON%2520e.EmpID%2520%253D%2520ep.EmpID%250ALEFT%2520JOIN%2520Project%2520p%2520ON%2520ep.ProjectID%2520%253D%2520p.ProjectID%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 9</strong><br>
+          Get the department with the highest number of employees.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520d.DeptName%250AFROM%2520Department%2520d%250AJOIN%2520Employee%2520e%2520ON%2520d.DeptID%2520%253D%2520e.DeptID%250AGROUP%2520BY%2520d.DeptName%250AORDER%2520BY%2520COUNT%28e.EmpID%29%2520DESC%250ALIMIT%25201%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 10</strong><br>
+          Delete employees who do not belong to any department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=DELETE%2520FROM%2520Employee%2520WHERE%2520DeptID%2520IS%2520NULL%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 11</strong><br>
+          Retrieve all project names and their respective departments.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520p.ProjectName%252C%2520d.DeptName%2520%250AFROM%2520Project%2520p%250AJOIN%2520Department%2520d%2520ON%2520p.DeptID%2520%253D%2520d.DeptID%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 12</strong><br>
+          Find employees who are not assigned to any project.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%2520FROM%2520Employee%2520%250AWHERE%2520EmpID%2520NOT%2520IN%2520%28SELECT%2520EmpID%2520FROM%2520EmployeeProject%29%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 13</strong><br>
+          Get the names of employees working in the 'Marketing' department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%2520FROM%2520Employee%2520e%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AWHERE%2520d.DeptName%2520%253D%2520%27Marketing%27%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 14</strong><br>
+          Find the average salary for each department.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520d.DeptName%252C%2520AVG%28e.Salary%29%2520AS%2520AvgSalary%250AFROM%2520Employee%2520e%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AGROUP%2520BY%2520d.DeptName%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 15</strong><br>
+          Get the top 3 highest-paid employees.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%252C%2520Salary%2520FROM%2520Employee%2520%250AORDER%2520BY%2520Salary%2520DESC%2520%250ALIMIT%25203%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 16</strong><br>
+          Find employees whose names start with 'A' or 'E'.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520EmpName%2520FROM%2520Employee%2520%250AWHERE%2520EmpName%2520LIKE%2520%27A%2525%27%2520OR%2520EmpName%2520LIKE%2520%27E%2525%27%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 17</strong><br>
+          Count how many employees are assigned to each project.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520p.ProjectName%252C%2520COUNT%28ep.EmpID%29%2520AS%2520EmployeeCount%250AFROM%2520Project%2520p%250ALEFT%2520JOIN%2520EmployeeProject%2520ep%2520ON%2520p.ProjectID%2520%253D%2520ep.ProjectID%250AGROUP%2520BY%2520p.ProjectName%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 18</strong><br>
+          Find employees who work in departments that have more than 3 employees.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520e.EmpName%252C%2520d.DeptName%250AFROM%2520Employee%2520e%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AWHERE%2520e.DeptID%2520IN%2520%28%250A%2520%2520%2520%2520SELECT%2520DeptID%2520FROM%2520Employee%250A%2520%2520%2520%2520GROUP%2520BY%2520DeptID%250A%2520%2520%2520%2520HAVING%2520COUNT%28EmpID%29%2520%253E%25203%250A%29%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 19</strong><br>
+          Retrieve the department that has the highest total salary expenditure.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520d.DeptName%252C%2520SUM%28e.Salary%29%2520AS%2520TotalSalary%250AFROM%2520Employee%2520e%250AJOIN%2520Department%2520d%2520ON%2520e.DeptID%2520%253D%2520d.DeptID%250AGROUP%2520BY%2520d.DeptName%250AORDER%2520BY%2520TotalSalary%2520DESC%250ALIMIT%25201%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Query: 20</strong><br>
+          Get the names of employees who are working on more than one project.
+        </p>
+      </div>
+  
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=18px&lh=121%25&si=false&es=2x&wm=false&code=SELECT%2520e.EmpName%252C%2520COUNT%28ep.ProjectID%29%2520AS%2520ProjectCount%250AFROM%2520Employee%2520e%250AJOIN%2520EmployeeProject%2520ep%2520ON%2520e.EmpID%2520%253D%2520ep.EmpID%250AGROUP%2520BY%2520e.EmpName%250AHAVING%2520COUNT%28ep.ProjectID%29%2520%253E%25201%253B"
+        class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+    <div class="side-label">
+      &copy; Nikhil Doppani
+    </div>
+  
+  </div>
+</body>
+</html>
