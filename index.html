@@ -166,11 +166,39 @@
                         <a href="https://docs.google.com/document/d/1I60apZ1Jc9S3offmSVrBh8FZsCKSRxBUrXJkLLjirrs/edit?usp=sharing">Git Commands</a>
                     </div>
                 </div>
+                <!-- Notication icon -->
+                <div id="notification" class="notification">
+                    <img src="assets/alarm.png" alt="Notification Icon" class="notification-icon">
+                    <div class="notification-content">
+                      <span class="notification-close" onclick="closeNotification()">×</span>
+                      <p><a href="SQL_master.html">Master in SQL</a> page was added check it ones.</p>
+                    </div>
+                  </div>
+                  
+                  
                 <script>
                     function toggleChatOptions() {
                         const chatMenu = document.getElementById("chatOptions");
                         chatMenu.style.display = chatMenu.style.display === "flex" ? "none" : "flex";
                     }
+
+                    // Notification icon
+                    
+                    window.addEventListener('DOMContentLoaded', () => {
+                        const notification = document.getElementById('notification');
+                        notification.style.display = 'flex';
+
+                        // Optional: Auto-close after 7 seconds
+                        // setTimeout(() => notification.style.display = 'none', 7000);
+                    });
+
+                    function closeNotification() {
+                        document.getElementById('notification').style.display = 'none';
+                    }
+
+                    setTimeout(() => notification.style.display = 'none', 9000);
+
+
                 </script>
                 
 
