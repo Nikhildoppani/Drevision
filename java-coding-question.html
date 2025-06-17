@@ -317,6 +317,252 @@
           true 
         </pre>
       </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 13</strong><br>
+          Write a program to check anagram.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=871.25&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=20px&ph=26px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520str1%2520and%2520str2%2520to%2520check%2520Anagram.%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520String%2520str1%253Dsc.nextLine%28%29.replaceAll%28%2522%252F%252Fs%2522%252C%2522%2522%29.toLowerCase%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520String%2520str2%253Dsc.nextLine%28%29.replaceAll%28%2522%252F%252Fs%2522%252C%2522%2522%29.toLowerCase%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28checkAnagram%28str1%252Cstr2%29%253Ftrue%253Afalse%29%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520public%2520static%2520boolean%2520checkAnagram%28String%2520str1%252CString%2520str2%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520HashMap%253CCharacter%252CInteger%253E%2520map%253Dnew%2520HashMap%253CCharacter%252CInteger%253E%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520if%28str1.length%28%29%2520%21%253D%2520str2.length%28%29%29%2520return%2520false%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28char%2520ch%253Astr1.toCharArray%28%29%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520map.put%28ch%252Cmap.getOrDefault%28ch%252C0%29%252B1%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28char%2520ch%253A%2520str2.toCharArray%28%29%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%28%21map.containsKey%28ch%29%29%2520return%2520false%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520map.put%28ch%252Cmap.get%28ch%29-1%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%28map.get%28ch%29%253C0%29%2520return%2520false%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%250A%2520%2520%2520%2520%2520%2520%2520%2520return%2520true%253B%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter str1 and str2 to check Anagram.
+          listen
+          silent
+          true
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 14</strong><br>
+          Write a program to Count Vowels and Consonants.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=868.75&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=15px&ph=18px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520a%2520String%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520String%2520input%253Dsc.nextLine%28%29.toLowerCase%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520countVowelsConsonants%28input%29%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520public%2520static%2520void%2520countVowelsConsonants%28String%2520str%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520vowels%253D0%252Cconsonants%253D0%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253D0%253Bi%253Cstr.length%28%29%253Bi%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520char%2520ch%253Dstr.charAt%28i%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%28isVowel%28ch%29%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520vowels%252B%252B%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520else%2520if%28ch%253E%253D%27a%27%2526%2526%2520ch%253C%253D%27z%27%2520%2526%2526%2520%21isVowel%28ch%29%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520consonants%252B%252B%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Vowels%2520%253A%2520%2522%252B%2520vowels%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Consonants%2520%253A%2520%2522%252B%2520consonants%29%253B%250A%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520public%2520static%2520boolean%2520isVowel%28char%2520c%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520if%28c%253D%253D%27a%27%257C%257Cc%253D%253D%27e%27%257C%257Cc%253D%253D%27i%27%257C%257Cc%253D%253D%27o%27%257C%257Cc%253D%253D%27u%27%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520return%2520true%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520return%2520false%253B%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter a String: 
+          Programming
+          Vowels : 3
+          Consonants : 8
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 15</strong><br>
+          Write a program to print Square Fill Pattern.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=863.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520n%2520value%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520n%253Dsc.nextInt%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253D1%253Bi%253C%253Dn%253Bi%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D1%253Bj%253C%253Dn%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522*%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter n value: 
+          5
+          * * * * * 
+          * * * * * 
+          * * * * * 
+          * * * * * 
+          * * * * * 
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 16</strong><br>
+          Write a program to print Square Hollow Pattern.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=863.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520n%2520value%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520n%253Dsc.nextInt%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253D1%253Bi%253C%253Dn%253Bi%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D1%253Bj%253C%253Dn%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%28i%253D%253D1%257C%257Cj%253D%253D1%257C%257Ci%253D%253Dn%257C%257Cj%253D%253Dn%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522*%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520else%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522%2520%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter n value: 
+          5
+          * * * * * 
+          *       * 
+          *       * 
+          *       * 
+          * * * * * 
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 17</strong><br>
+          Write a program to print Right Half Pyramid Pattern.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=863.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520n%2520value%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520n%253Dsc.nextInt%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253D1%253Bi%253C%253Dn%253Bi%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D1%253Bj%253C%253Di%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522*%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter n value: 
+          5
+          * 
+          * * 
+          * * * 
+          * * * * 
+          * * * * * 
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 17</strong><br>
+          Write a program to print Left Half Pyramid Pattern.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=863.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520n%2520value%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520n%253Dsc.nextInt%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253Dn%253Bi%253E%253D1%253Bi--%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D1%253Bj%253C%253Di%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522%2520%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D0%253Bj%253C%253Dn-i%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522*%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter n value: 
+          5
+                    * 
+                  * * 
+                * * * 
+              * * * * 
+            * * * * *  
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 18</strong><br>
+          Write a program to print Reverse Right Half Pyramid Pattern.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=680&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%253Dnew%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Enter%2520the%2520n%2520value%253A%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520n%253Dsc.nextInt%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520i%253Dn%253Bi%253E%253D1%253Bi--%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520for%28int%2520j%253D1%253Bj%253C%253Di%253Bj%252B%252B%29%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.print%28%2522*%2520%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Enter the n value: 
+          5
+          * * * * * 
+          * * * * 
+          * * * 
+          * * 
+          *  
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 19</strong><br>
+          Write a program to find the smallest number in an array.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=864.5&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%255B%255D%2520arr%2520%253D%2520%257B11%252C%252024%252C%252063%252C%252096%252C%252034%252C%252064%252C%252033%257D%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520findSmallest%28arr%29%253B%250A%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520public%2520static%2520void%2520findSmallest%28int%255B%255D%2520arr%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520num%2520%253D%2520Integer.MAX_VALUE%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520arr.length%253B%2520i%252B%252B%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28num%2520%253E%2520arr%255Bi%255D%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520num%2520%253D%2520arr%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Smallest%2520number%2520in%2520the%2520array%253A%2520%2522%2520%252B%2520num%29%253B%250A%2520%2520%2520%2520%257D%250A%257D%250A"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Smallest number in the array: 11
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 20</strong><br>
+          Write a program to find the Second largest number in an array.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=880.75&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%255B%255D%2520arr%2520%253D%2520%257B11%252C%252024%252C%252063%252C%252096%252C%252034%252C%252064%252C%252033%257D%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520findSecondLargest%28arr%29%253B%250A%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520public%2520static%2520void%2520findSecondLargest%28int%255B%255D%2520arr%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520largest%2520%253D%2520Integer.MIN_VALUE%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520secondLargest%2520%253D%2520Integer.MIN_VALUE%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520arr.length%253B%2520i%252B%252B%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28arr%255Bi%255D%2520%253E%2520largest%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520secondLargest%2520%253D%2520largest%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520largest%2520%253D%2520arr%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%2520else%2520if%2520%28arr%255Bi%255D%2520%253E%2520secondLargest%2520%2526%2526%2520arr%255Bi%255D%2520%21%253D%2520largest%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520secondLargest%2520%253D%2520arr%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28secondLargest%2520%253D%253D%2520Integer.MIN_VALUE%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522No%2520second%2520largest%2520number%2520found%2520%28all%2520elements%2520might%2520be%2520equal%29.%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%2520else%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Second%2520largest%2520number%2520in%2520the%2520array%253A%2520%2522%2520%252B%2520secondLargest%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D%250A"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Second largest number in the array: 64
+        </pre>
+      </div>
+
+      <div class="question-box">
+        <p>
+          <strong>Question: 21</strong><br>
+          Write a program to find the second smallest number in an array.
+        </p>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe
+        src="https://carbon.now.sh/embed?bg=rgba%28171%2C+184%2C+195%2C+1%29&t=vscode&wt=none&l=text%2Fx-java&width=893.25&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=import%2520java.util.*%253B%250A%250Aclass%2520Main%2520%257B%250A%2520%2520%2520%2520public%2520static%2520void%2520main%28String%255B%255D%2520args%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520Scanner%2520sc%2520%253D%2520new%2520Scanner%28System.in%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%255B%255D%2520arr%2520%253D%2520%257B11%252C%252024%252C%252063%252C%252096%252C%252034%252C%252064%252C%252033%257D%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520findSecondSmallest%28arr%29%253B%250A%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520public%2520static%2520void%2520findSecondSmallest%28int%255B%255D%2520arr%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520smallest%2520%253D%2520Integer.MAX_VALUE%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520int%2520secondSmallest%2520%253D%2520Integer.MAX_VALUE%253B%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520for%2520%28int%2520i%2520%253D%25200%253B%2520i%2520%253C%2520arr.length%253B%2520i%252B%252B%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28arr%255Bi%255D%2520%253C%2520smallest%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520secondSmallest%2520%253D%2520smallest%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520smallest%2520%253D%2520arr%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%2520else%2520if%2520%28arr%255Bi%255D%2520%253C%2520secondSmallest%2520%2526%2526%2520arr%255Bi%255D%2520%21%253D%2520smallest%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520secondSmallest%2520%253D%2520arr%255Bi%255D%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%250A%2520%2520%2520%2520%2520%2520%2520%2520if%2520%28secondSmallest%2520%253D%253D%2520Integer.MAX_VALUE%29%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522No%2520second%2520smallest%2520number%2520found%2520%28all%2520elements%2520might%2520be%2520equal%29.%2522%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%2520else%2520%257B%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520System.out.println%28%2522Second%2520smallest%2520number%2520in%2520the%2520array%253A%2520%2522%2520%252B%2520secondSmallest%29%253B%250A%2520%2520%2520%2520%2520%2520%2520%2520%257D%250A%2520%2520%2520%2520%257D%250A%257D%250A"
+          class="responsive-iframe"
+          sandbox="allow-scripts allow-same-origin"
+        ></iframe>
+      </div>
+  
+      <div class="output-area">
+        <h2>Output</h2>
+        <pre>
+          Second smallest number in the array: 24
+        </pre>
+      </div>
     <div class="side-label">
       &copy; Nikhil Doppani
     </div>
