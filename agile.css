@@ -445,3 +445,31 @@ html {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.side-label {
+    position: fixed;
+    top: 40%;
+    right: 1.5%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: right center;
+    background-color: #213448;
+    color: #ECEFCA;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border: 2px solid #94B4C1;
+  }
+
+  .side-label:hover {
+    background-color: #547792;
+  }
+
+  .side-label-icon {
+    display: inline-block;
+    margin-left: 10px;
+    color: #94B4C1;
+  }
